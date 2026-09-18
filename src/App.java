@@ -9,7 +9,6 @@ public class App {
 
     private String storedUsername;
     private String storedPassword;
-    private String storedCell;
     private String firstName;
     private String lastName;
     private boolean isLoggedIn = false;
@@ -82,7 +81,6 @@ public class App {
         // All checks passed – store the details
         this.storedUsername = username;
         this.storedPassword = password;
-        this.storedCell = cell;
         this.firstName = firstName;
         this.lastName = lastName;
 
