@@ -1,9 +1,8 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-/**
- * Login class for PROG5121 Part 1 – Registration and Login feature.
- * Console application only.
+/*
+ *PROG5121 Part 1 – Registration and Login feature.
  */
 public class App {
 
@@ -12,8 +11,6 @@ public class App {
     private String firstName;
     private String lastName;
     private boolean isLoggedIn = false;
-
-    // ---------- Validation methods ----------
 
     /**
      * Username must contain an underscore and be no longer than 5 characters.
@@ -25,7 +22,7 @@ public class App {
     }
 
     /**
-     * Password complexity rules:
+     * Password:
      * - at least 8 characters
      * - at least one capital letter
      * - at least one number
@@ -50,7 +47,6 @@ public class App {
     /**
      * South African cell number must start with international code (+27)
      * followed by a number that is no more than 10 characters long.
-     * Regex reference: standard SA mobile format with country code.
      */
     public boolean checkCellPhoneNumber(String cell) {
         if (cell == null) return false;
@@ -58,8 +54,6 @@ public class App {
         String regex = "^\\+27[0-9]{9}$";
         return Pattern.matches(regex, cell);
     }
-
-    // ---------- Registration ----------
 
     /**
      * Returns the appropriate registration message.
@@ -88,8 +82,6 @@ public class App {
              + "Password successfully captured.\n"
              + "Cell phone number successfully added.";
     }
-
-    // ---------- Login ----------
 
     /**
      * Verifies that the entered credentials match the stored ones.
