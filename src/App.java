@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
  */
 public class App {
 
-    // ===== Part 1 fields =====
     private String storedUsername;
     private String storedPassword;
     private String storedCell;
@@ -16,7 +15,7 @@ public class App {
     private String lastName;
     private boolean isLoggedIn = false;
 
-    // ===== Part 2 + Part 3 collections (no hard-coding) =====
+    //Part 2 + Part 3
     private List<Message> sentMessages = new ArrayList<>();
     private List<Message> disregardedMessages = new ArrayList<>();
     private List<Message> storedMessages = new ArrayList<>();
@@ -25,7 +24,7 @@ public class App {
 
     private int totalMessagesSent = 0;
 
-    // ---------- Part 1 methods ----------
+    //  Part 1 methods
     public boolean checkUserName(String username) {
         return username != null && username.contains("_") && username.length() <= 5;
     }
@@ -85,7 +84,7 @@ public class App {
         return isLoggedIn;
     }
 
-    // ---------- Main menu (now with 4 options) ----------
+    // Main menu (now with 4 options) 
     public void startMessaging(Scanner sc) {
         // Load any previously stored messages from JSON
         loadStoredMessagesFromFile();
@@ -123,7 +122,7 @@ public class App {
         }
     }
 
-    // ---------- Send Messages (Part 2) ----------
+    // Send Messages (Part 2) 
     private void sendMessagesFlow(Scanner sc) {
         System.out.print("How many messages do you wish to enter? ");
         int numMessages;
@@ -189,7 +188,7 @@ public class App {
         }
     }
 
-    // ---------- Part 3 – Stored Messages Menu ----------
+    // Part 3 – Stored Messages Menu 
     private void storedMessagesMenu(Scanner sc) {
         boolean back = false;
         while (!back) {
@@ -398,7 +397,7 @@ public class App {
         }
     }
 
-    // ---------- Main method ----------
+    //  Main method 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         App app = new App();
